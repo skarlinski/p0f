@@ -23,7 +23,7 @@
 #define P0F_ADDR_IPV4        0x04
 #define P0F_ADDR_IPV6        0x06
 
-#define P0F_STR_MAX          63
+#define P0F_STR_MAX          31
 
 #define P0F_MATCH_FUZZY      0x01
 #define P0F_MATCH_GENERIC    0x02
