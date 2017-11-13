@@ -101,7 +101,6 @@ struct host_data {
 
   s32 last_class_id;                    /* OS class ID (-1 = not found)       */
   s32 last_name_id;                     /* OS name ID (-1 = not found)        */
-  s64 actual_sig;
   u8* last_flavor;                      /* Last OS flavor                     */
 
   u8  last_quality;                     /* Generic or fuzzy match?            */
