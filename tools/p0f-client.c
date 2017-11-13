@@ -202,14 +202,15 @@ int main(int argc, char** argv) {
     strftime((char*)tmp, 128, "%Y/%m/%d %H:%M:%S", t);
     SAYF("Sys change    = %s\n", tmp);
   }
+  
+  SAYF("tcp sig  =  %s\n", r.actual_sig);
 
   if (r.uptime_min) {
     SAYF("Uptime        = %u days %u hrs %u min (modulo %u days)\n", 
          r.uptime_min / 60 / 24, (r.uptime_min / 60) % 24, r.uptime_min % 60,
          r.up_mod_days);
   }
-
-  return 0;
+ return 0;
 
 }
 

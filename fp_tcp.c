@@ -247,6 +247,7 @@ static void tcp_find_match(u8 to_srv, struct tcp_sig* ts, u8 dupe_det,
     ts->matched = gmatch;
     ts->fuzzy   = 0;
     ts->dist    = gmatch->sig->ttl - ts->ttl;
+
     return;
 
   }
@@ -1208,7 +1209,7 @@ struct tcp_sig* fingerprint_tcp(u8 to_srv, struct packet_data* pk,
   add_observation_field("params", dump_flags(pk, sig));
 
   add_observation_field("raw_sig", dump_sig(pk, sig, f->syn_mss));
-
+  if (to_srv) f->client->actual_sig = dump_sig(pk, sig, f->syn_mss);
   if (pk->tcp_type == TCP_SYN) f->syn_mss = pk->mss;
 
   /* That's about as far as we go with non-OS signatures. */
