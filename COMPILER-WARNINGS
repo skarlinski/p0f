@@ -1,4 +1,4 @@
 fp_tcp.c: In function ‘fingerprint_tcp’:
-fp_tcp.c:1212:37: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
-   if (to_srv) f->client->actual_sig = dump_sig(pk, sig, f->syn_mss);
-                                     ^
+fp_tcp.c:1212:40: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+   if ( ! to_srv) f->client->actual_sig = dump_sig(pk, sig, f->syn_mss);
+                                        ^
